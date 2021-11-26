@@ -19,7 +19,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import os
 import re
 from newspaper import Article
-from newspaper import Config
+from newspaper import Config as CfgNews
 import config
 
 
@@ -35,12 +35,12 @@ class ScrapeArticle:
         wburl = self.__wburl
 
         # Configuration for Newspaper.Article instance
-        conf = Config()
-        conf.fetch_images = False
-        conf.browser_user_agent = config.user_agent
-        conf.request_timeout = config.request_time_out
+        conf_news = CfgNews()
+        conf_news.fetch_images = False
+        conf_news.browser_user_agent = config.user_agent
+        conf_news.request_timeout = config.request_time_out
 
-        article = Article(wburl, config=conf)
+        article = Article(wburl, config=conf_news)
         article.download()
         article.parse()
         self.__word_count = len(f'{article.text} {article.title}'.strip().split(' '))
@@ -53,7 +53,7 @@ class ScrapeArticle:
         article = self.__scrape_article()
         if article is None:
             return None
-        projects_dir = 'projects'
+        projects_dir = config.projects_folder
         domain_dir = self.__domain_dir.replace('/', '').replace(':', '_').replace('\n', '')
         current_dir = projects_dir + '/' + domain_dir
         filename = f'{self.__title} {self.__word_count} words'

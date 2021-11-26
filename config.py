@@ -26,3 +26,7 @@ max_word_len = int(config_file.get('Word Limits', 'max_word_count'))
 
 user_agent = config_file.get('Network and Connection', 'user_agent')
 request_time_out = int(config_file.get('Network and Connection', 'request_time_out'))
+
+domain_list = config_file.get('Files and Directories', 'domain_list')
+log = config_file.get('Files and Directories', 'log')
+projects_folder = config_file.get('Files and Directories', 'projects_folder')
