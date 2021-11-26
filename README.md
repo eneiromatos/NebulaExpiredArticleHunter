@@ -8,10 +8,13 @@ all by scraping expired websites for their forgotten articles.
 
 ## Features
 * Low memory consumption.
-* Configurable using config.ini file.
+* Configurable using config.ini file:
+  * Connection parameters.
+  * Files and folder names.
+  * Min and max words per article.  
 * Verbose interface.
 * Organize the discovered articles in a friendly way.
-* you can scrape as many expired domains as you wish.
+* You can scrape as many expired domains as you wish.
 
 ## Installation and running 
 To install and run this project copy or clone all the files to your preferred folder and type and execute:
