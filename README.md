@@ -29,6 +29,7 @@ Nebula Expired Article Hunter was developed under `Python 3.9.0` it should be fi
 
 ## TO DO
 * Speed up the scraping process.
+* Add proxy rotation.
 * GUI.
 * Check the articles for plagiarism.
 * Add a expired domain scraper.
