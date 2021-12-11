@@ -26,14 +26,14 @@ import config
 if not os.path.exists(config.domain_list):
     with open(config.domain_list, mode='w') as working_file:
         print(f'File {config.domain_list} has been created, put you expired domains there.')
-        input('Press any key to exit')
+        input('Press any key to exit.')
     sys.exit()
 
 with open(config.domain_list, mode='r') as domains:
     domains.seek(0)
     domains = domains.readlines()
     print(f'{len(domains)} domains will be processed, this may take some time, please be patient.')
-    input('Press any key to continue')
+    input('Press any key to continue.')
     for domain in domains:
         if domain in ('', ' ', '/n', None):
             continue
